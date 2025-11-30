@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debian-pod-with-labels
+  labels:
+    my-label: cool
+    my-other-label: super
+spec:
+  restartPolicy: Always
+  terminationGracePeriodSeconds: 2
+  containers:
+    - name: shelly
+      image: debian:10-slim
+      imagePullPolicy: Always
+      command:
+        - bash
+        - -c
+        - sleep infinity

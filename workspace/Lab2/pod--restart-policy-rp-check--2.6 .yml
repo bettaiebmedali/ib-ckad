@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rp-check
+  labels:
+    app: rpchk
+spec:
+  restartPolicy: Always
+  terminationGracePeriodSeconds: 2
+  containers:
+    - name: rp-check
+      image: debian:10-slim
+      command:
+        - bash
+        - -c
+        - sleep 15s
